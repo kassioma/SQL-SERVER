@@ -1,4 +1,4 @@
---Criando Bancos de Dados -CREATE DATABASE - Microsoft SQL Server
+--Creating Databases -CREATE DATABASE - Microsoft SQL Server
 CREATE DATABASE teste01 ON PRIMARY
 (NAME = teste01,
 FILENAME = 'C:\SQL\teste01.mdf',
@@ -13,21 +13,21 @@ FILEGROWTH = 1MB
 GO
 )
 
---Consultar bancos esistentes
+--Consult existing databases
 SELECT name
 FROM master.sys.databases
 ORDER BY name;
 
---Selecionar banco a usar
+--Select database to use
 USE teste01;
 
---Obter informações sobre um banco específico
+--Get information about a specific database
 EXEC sp_helpdb teste01;
 
---Excluir banco de dados
+--Delete database
 DROP DATABASE teste01;
 
---Excluir banco em uso
+--Delete database in use
 USE MASTER
 GO
 ALTER DATABASE teste01 SET SINGLE_USER WITH ROLLBACK IMMEDIATE
